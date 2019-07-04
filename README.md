@@ -17,6 +17,12 @@ platforms:
     command: /lib/systemd/systemd
 ```
 
+```TAGS```
+----
+
+**```9```**: Stretch version
+**```8```**: Jessie version
+
 # Goals
 
 1. [Fix apt Errors](#Prevents)

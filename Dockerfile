@@ -1,4 +1,5 @@
-FROM debian:9
+ARG DEBIAN_VERSION=9
+FROM debian:$DEBIAN_VERSION
 
 ENV container docker
 ENV LC_ALL C
@@ -10,7 +11,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && echo "exit 0" > /usr/sbin/policy-rc.d \
-    && ln -s /lib/systemd/systemd /sbin/init
+    && ln -s /lib/systemd/systemd /sbin/init || true
 
 RUN rm -f /lib/systemd/system/multi-user.target.wants/* \
     /etc/systemd/system/*.wants/* \
