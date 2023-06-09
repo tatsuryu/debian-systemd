@@ -11,6 +11,8 @@ stretch:
 		--build-arg DEBIAN_VERSION=9 \
 		--build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
 		-t tatsuryu/debian-systemd-molecule:9 .
+	docker tag tatsuryu/debian-systemd-molecule:9 \
+		tatsuryu/debian-systemd-molecule:stretch
 
 buster:
 	DOCKER_BUILDKIT=1 \
@@ -18,6 +20,8 @@ buster:
 		--build-arg DEBIAN_VERSION=10 \
 		--build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
 		-t tatsuryu/debian-systemd-molecule:10 .
+	docker tag tatsuryu/debian-systemd-molecule:10 \
+		tatsuryu/debian-systemd-molecule:buster
 
 bullseye:
 	DOCKER_BUILDKIT=1 \
@@ -25,6 +29,8 @@ bullseye:
 		--build-arg DEBIAN_VERSION=11 \
 		--build-arg BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
 		-t tatsuryu/debian-systemd-molecule:11 .
+	docker tag tatsuryu/debian-systemd-molecule:11 \
+		tatsuryu/debian-systemd-molecule:buster
 
 .PHONY: push-stretch push-buster push-bullseye
 push-stretch:
