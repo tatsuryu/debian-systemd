@@ -1,6 +1,6 @@
 # debian-systemd
 
-Docker Image file: debian 9 (stretch) with systemd to use in molecule tests.
+Debian image with systemd for use with ansible.
 
 Molecule example:
 
@@ -21,7 +21,8 @@ platforms:
 ----
 
 **```9```**: Stretch version
-**```8```**: Jessie version
+**```10```**: Buster version
+**```11```**: Bullseye version
 
 # Goals
 
